@@ -150,3 +150,36 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCertifications();
     }
 });
+
+
+// Data for the projects
+const projects = [
+    {
+        title: "Task Manager Web App 🚀",
+        description: "A simple Task Management application built using HTML, CSS, and JavaScript with localStorage for data persistence.",
+        liveDemo: "https://aktaskmanage.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Task_Manager",
+        technologies: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+        title: "🔐 Register-Login Page",
+        description: "A simple, responsive Register and Login Page built using HTML, CSS, and JavaScript. This project demonstrates basic frontend form handling, UI design, and client-side validation principles.",
+        liveDemo: "https://akregisterloginpage1.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Register-Login-Page",
+        technologies: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+        title: "Tic-Tac-Toe: Multi-Mode Game",
+        description: "A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript, featuring three exciting game modes: Local 2-Player, Online 2-Player, and Player vs. Computer (AI).",
+        liveDemo: "https://aktictactoegame.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Tic-Tac-Toe",
+        technologies: ["HTML", "CSS", "JavaScript", "Firebase"]
+    },
+    {
+        title: "Dot Connect Game",
+        description: "This is a modern, web-based version of the classic childhood game, Dot Connect (also known as Dots and Boxes). The project is built to showcase a full-stack, real-time multiplayer experience. Players can enjoy local games, challenge an AI, or compete against friends online in a real-time multiplayer lobby.",
+        liveDemo: "https://dotconnectgame.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Dot-Connect-Game",
+        technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "Socket.IO"]
+    }
+];
