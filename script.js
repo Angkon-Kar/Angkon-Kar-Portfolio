@@ -150,3 +150,138 @@ document.addEventListener('DOMContentLoaded', () => {
         renderCertifications();
     }
 });
+
+
+// Data for the projects
+const projects = [
+    {
+        title: "Task Manager Web App 🚀",
+        description: "A simple Task Management application built using HTML, CSS, and JavaScript with localStorage for data persistence.",
+        liveDemo: "https://aktaskmanage.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Task_Manager",
+        technologies: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+        title: "🔐 Register-Login Page",
+        description: "A simple, responsive Register and Login Page built using HTML, CSS, and JavaScript. This project demonstrates basic frontend form handling, UI design, and client-side validation principles.",
+        liveDemo: "https://akregisterloginpage1.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Register-Login-Page",
+        technologies: ["HTML", "CSS", "JavaScript"]
+    },
+    {
+        title: "Tic-Tac-Toe: Multi-Mode Game",
+        description: "A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript, featuring three exciting game modes: Local 2-Player, Online 2-Player, and Player vs. Computer (AI).",
+        liveDemo: "https://aktictactoegame.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Tic-Tac-Toe",
+        technologies: ["HTML", "CSS", "JavaScript", "Firebase"]
+    },
+    {
+        title: "Dot Connect Game",
+        description: "This is a modern, web-based version of the classic childhood game, Dot Connect (also known as Dots and Boxes). The project is built to showcase a full-stack, real-time multiplayer experience. Players can enjoy local games, challenge an AI, or compete against friends online in a real-time multiplayer lobby.",
+        liveDemo: "https://dotconnectgame.netlify.app/",
+        github: "https://github.com/Angkon-Kar/Dot-Connect-Game",
+        technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Express", "Socket.IO"]
+    }
+];
+
+// Function to render projects
+function renderProjects(filter = 'All') {
+    const projectsContainer = document.getElementById('projects-container');
+    const filtersContainer = document.getElementById('filters-container');
+
+    if (!projectsContainer || !filtersContainer) {
+        return; // Return if we are not on the projects page
+    }
+
+    // Clear previous content
+    projectsContainer.innerHTML = '';
+
+    // Get all unique technologies from the projects data
+    const allTechnologies = projects.reduce((acc, project) => {
+        project.technologies.forEach(tech => {
+            if (!acc.includes(tech)) {
+                acc.push(tech);
+            }
+        });
+        return acc;
+    }, ['All']); // Start with 'All' filter
+
+    // Render filter buttons if they don't already exist
+    if (filtersContainer.children.length === 0) {
+        allTechnologies.forEach(tech => {
+            const button = document.createElement('button');
+            button.textContent = tech;
+            button.classList.add(
+                'px-4', 'py-2', 'rounded-full', 'font-semibold',
+                'transition-colors', 'duration-300'
+            );
+            
+            // Add click event listener to filter
+            button.addEventListener('click', () => {
+                renderProjects(tech); // Re-render projects with the new filter
+                // Update active button style
+                document.querySelectorAll('#filters-container button').forEach(btn => {
+                    btn.classList.remove('bg-blue-600', 'text-white');
+                    btn.classList.add('bg-gray-700', 'text-gray-300', 'hover:bg-gray-600');
+                });
+                button.classList.remove('bg-gray-700', 'text-gray-300', 'hover:bg-gray-600');
+                button.classList.add('bg-blue-600', 'text-white');
+            });
+            filtersContainer.appendChild(button);
+        });
+    }
+
+    // Filter the projects based on the selected technology
+    const filteredProjects = projects.filter(project => {
+        return filter === 'All' || project.technologies.includes(filter);
+    });
+
+    // Generate and render the filtered project cards
+    filteredProjects.forEach(project => {
+        // Create technology tags HTML
+        const techTagsHtml = project.technologies.map(tech => `
+            <span class="bg-gray-700 text-gray-300 text-sm font-medium px-2.5 py-0.5 rounded-full">
+                ${tech}
+            </span>
+        `).join('');
+
+        const projectCard = `
+            <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300 flex flex-col">
+                <h3 class="text-2xl font-semibold text-white mb-3">${project.title}</h3>
+                <p class="text-gray-400 mb-4 flex-grow">${project.description}</p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    ${techTagsHtml}
+                </div>
+                <div class="flex space-x-4 mt-auto">
+                    <a
+                        href="${project.liveDemo}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-md"
+                    >
+                        Live Demo <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
+                    </a>
+                    <a
+                        href="${project.github}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-md"
+                    >
+                        GitHub <i data-lucide="github" class="w-4 h-4 ml-2"></i>
+                    </a>
+                </div>
+            </div>
+        `;
+        projectsContainer.innerHTML += projectCard;
+    });
+
+    // Re-render lucide icons after injecting new HTML
+    lucide.createIcons();
+}
+
+// Initial call to render projects and filters on page load
+document.addEventListener('DOMContentLoaded', () => {
+    if (document.getElementById('projects-container')) {
+        renderProjects();
+    }
+});
