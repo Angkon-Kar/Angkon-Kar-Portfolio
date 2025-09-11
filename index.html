@@ -14,6 +14,18 @@
   <link rel="icon" type="image/jpg" href="assets/angkonkar.jpg">
   <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    /* Carousel Scroll Animation */
+    .scroll-container {
+      display: flex;
+      width: max-content;
+      animation: scroll-left 20s linear infinite;
+    }
+    @keyframes scroll-left {
+      from { transform: translateX(100%); }
+      to { transform: translateX(-100%); }
+    }
+  </style>
 </head>
 
 <body class="min-h-screen bg-gray-900 text-gray-200 antialiased">
@@ -33,7 +45,7 @@
     </nav>
   </header>
 
-  <!-- Spacer for fixed navbar -->
+  <!-- Spacer for navbar -->
   <div class="pt-24"></div>
 
   <!-- Hero Section -->
@@ -55,6 +67,42 @@
         <a href="about.html" class="px-6 py-3 bg-gray-700 hover:bg-gray-600 text-blue-300 font-semibold rounded-lg shadow-md transition transform hover:scale-105">
           Learn More About Me
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Projects -->
+  <section class="py-16 px-6 md:px-12">
+    <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Featured Projects</h2>
+    <div class="overflow-hidden">
+      <div class="scroll-container space-x-6">
+        <!-- Project Card -->
+        <div class="bg-gray-800 w-72 p-6 rounded-xl shadow-lg border border-gray-700">
+          <h3 class="text-xl font-semibold text-white mb-2">Portfolio Website</h3>
+          <p class="text-gray-400">A modern portfolio site built with Tailwind CSS and JavaScript.</p>
+        </div>
+        <div class="bg-gray-800 w-72 p-6 rounded-xl shadow-lg border border-gray-700">
+          <h3 class="text-xl font-semibold text-white mb-2">E-Commerce Store</h3>
+          <p class="text-gray-400">An online shopping platform with cart and checkout features.</p>
+        </div>
+        <div class="bg-gray-800 w-72 p-6 rounded-xl shadow-lg border border-gray-700">
+          <h3 class="text-xl font-semibold text-white mb-2">Blog Platform</h3>
+          <p class="text-gray-400">A simple CMS for writing and publishing blog posts.</p>
+        </div>
+        <!-- Add more project cards as needed -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Certificates Carousel -->
+  <section class="py-16 px-6 md:px-12">
+    <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">My Certificates</h2>
+    <div class="overflow-hidden">
+      <div class="scroll-container space-x-6">
+        <img src="assets/cert1.jpg" alt="Certificate 1" class="h-40 rounded-lg shadow-lg border border-gray-700">
+        <img src="assets/cert2.jpg" alt="Certificate 2" class="h-40 rounded-lg shadow-lg border border-gray-700">
+        <img src="assets/cert3.jpg" alt="Certificate 3" class="h-40 rounded-lg shadow-lg border border-gray-700">
+        <!-- Add more images as needed -->
       </div>
     </div>
   </section>
