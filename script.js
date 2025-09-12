@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const projects = [
     {
         title: "Task Manager Web App 🚀",
-        description: "A simple Task Management application built using HTML, CSS, and JavaScript with localStorage for data persistence.",
+        description: "A simple Task Management application built using HTML, CSS, and JavaScript with localStorage for data persistence. It is a real professional task manager: CRUD + search + filter + sort + edit + due date tracking + nice UI.",
         liveDemo: "https://aktaskmanage.netlify.app/",
         github: "https://github.com/Angkon-Kar/Task_Manager",
         technologies: ["HTML", "CSS", "JavaScript"]
