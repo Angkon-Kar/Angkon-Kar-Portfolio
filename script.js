@@ -13,7 +13,16 @@ const certifications = [
         link: "assets/AWSCloudSecurityEssentialsforExecutives.pdf",
         linkText: "View PDF",
         isPdf: true,
-        category: "Cloud"
+        category: "Executive Education"
+    },
+    {
+        title: "Data For Executives",
+        issuer: "AWS Skill Builder",
+        image: "assets/DataForExecutives.png",
+        link: "assets/DataForExecutives.pdf",
+        linkText: "View PDF",
+        isPdf: true,
+        category: "Executive Education"
     },
     {
         title: "The Complete ChatGPT Guide From Zero to Hero - 2023",
