@@ -68,6 +68,15 @@ const certifications = [
         linkText: "Verify",
         isPdf: false,
         category: "Programming Basics"
+    },
+    {
+        title: "Youth Club of Bangladesh - Conference 2025",
+        issuer: "Youth Club of Bangladesh",
+        image: "assets/YouthClubofBangladesh_Conference.jpg",
+        link: "assets/YouthClubofBangladeshConference.pdf",
+        linkText: "View PDF",
+        isPdf: true,
+        category: "Conferences"
     }
 ];
 
