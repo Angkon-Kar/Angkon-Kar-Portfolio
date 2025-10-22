@@ -25,6 +25,15 @@ const certifications = [
         category: "Executive Education"
     },
     {
+        title: "Cloud For Risk and Compliance Executives",
+        issuer: "AWS Skill Builder",
+        image: "assets/CloudforriskandcomplianceExecutices.png",
+        link: "assets/CloudforriskandcomplianceExecutices.pdf",
+        linkText: "View PDF",
+        isPdf: true,
+        category: "Executive Education"
+    },
+    {
         title: "The Complete ChatGPT Guide From Zero to Hero - 2023",
         issuer: "Udemy",
         image: "assets/TheCompleteChatGPTGuideFromZerotoHero2023.png",
