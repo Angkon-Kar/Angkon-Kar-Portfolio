@@ -34,6 +34,15 @@ const certifications = [
         category: "Executive Education"
     },
     {
+        title: "Generative AI for Executives",
+        issuer: "AWS Skill Builder",
+        image: "assets/GenerativeAIforExecutives.png",
+        link: "assets/GenerativeAIforExecutivesq.pdf",
+        linkText: "View PDF",
+        isPdf: true,
+        category: "Executive Education"
+    },
+    {
         title: "The Complete ChatGPT Guide From Zero to Hero - 2023",
         issuer: "Udemy",
         image: "assets/TheCompleteChatGPTGuideFromZerotoHero2023.png",
