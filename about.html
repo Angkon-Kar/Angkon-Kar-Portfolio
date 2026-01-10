@@ -4,19 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About - Angkon Kar</title>
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon -->
   <link rel="icon" type="image/jpg" href="assets/angkonkar.jpg">
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
-<body class="min-h-screen bg-gray-900 text-gray-200 antialiased">
+<body class="min-h-screen bg-gray-900 text-gray-200 antialiased overflow-x-hidden">
     <header class="bg-gray-800 shadow-lg py-4 px-6 md:px-12 fixed w-full z-50 top-0">
     <nav class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
         <a href="index.html" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-2 md:mb-0">
@@ -24,171 +19,216 @@
         </a>
         <ul class="flex space-x-6 md:space-x-8">
         <li><a href="index.html" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium">Home</a></li>
-        <li><a href="about.html" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium">About</a></li>
+        <li><a href="about.html" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium border-b-2 border-blue-400">About</a></li>
         <li><a href="projects.html" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium">Projects</a></li>
         <li><a href="certifications.html" class="text-gray-300 hover:text-blue-400 transition-colors duration-300 font-medium">Certifications</a></li>
         </ul>
     </nav>
     </header>
 
-    <!-- Spacer so content isn’t hidden behind navbar -->
-    <div class="pt-24"></div>
+    <div class="pt-28"></div>
 
-  <!-- Fix: Add padding so content is not hidden under navbar -->
-  <div class="pt-24"></div>
+    <div class="fixed top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob z-0"></div>
+    <div class="fixed top-20 -right-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-blob animation-delay-2000 z-0"></div>
 
-  <!-- Background blobs (lower z-index so they don’t block clicks) -->
-  <div class="absolute top-0 -left-4 w-72 h-72 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob z-0"></div>
-  <div class="absolute top-0 -right-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-2000 z-0"></div>
-  <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-blob animation-delay-4000 z-0"></div>
+    <main class="relative z-10 px-6 md:px-12 max-w-5xl mx-auto">
+        
+        <section id="about" class="mb-20">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-12 flex items-center justify-center">
+                <i data-lucide="user" class="w-9 h-9 mr-3"></i> Professional Bio
+            </h2>
+            <div class="glow-card bg-gray-800 p-8 rounded-2xl border border-gray-700 flex flex-col md:flex-row items-center gap-10">
+                <div class="flex-shrink-0">
+                    <img src="assets/angkonkar.jpg" alt="Angkon Kar" class="w-52 h-52 object-cover rounded-2xl border-4 border-gray-700 shadow-2xl">
+                </div>
+                <div class="flex-grow text-center md:text-left">
+                    <h3 class="text-3xl font-bold text-white mb-2">Angkon Kar</h3>
+                    <p class="text-blue-400 font-medium mb-4">MERN Stack Developer & Competitive Programmer</p>
+                    
+                    <div class="text-lg leading-relaxed text-gray-400">
+                        <p id="bio-short">
+                            Hello! I'm Angkon Kar, a passionate web developer who loves creating user-friendly digital experiences....
+                        </p>
+                        <p id="bio-more" class="hidden mt-4">
+                            My coding journey began with a fascination for website structures and it quickly became a profession where I can combine creativity with problem-solving skills. I specialize in front-end development, working with technologies like HTML, CSS, JavaScript, and React. I enjoy turning complex ideas into simple, beautiful, and intuitive designs. When I'm not coding, you can find me exploring new tech trends and contributing to open-source projects.
+                        </p>
+                        <button id="see-more-btn" class="text-blue-400 hover:text-blue-300 font-bold mt-2 transition-colors">
+                            See More...
+                        </button>
+                    </div>
 
-  <!-- Main Content -->
-  <div class="relative z-10 px-6 md:px-12">
-    <section id="about" class="max-w-4xl mx-auto mb-16">
-      <h2 class="text-4xl font-bold text-center text-blue-400 mb-10 flex items-center justify-center">
-        <i data-lucide="user" class="w-9 h-9 mr-3"></i> About Me
-      </h2>
-      <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700 flex flex-col md:flex-row items-center gap-8">
-        <div class="flex-shrink-0">
-          <img src="assets/angkonkar.jpg" alt="Angkon Kar" class="rounded-full w-48 h-48 object-cover shadow-lg border-4 border-blue-400">
-        </div>
-        <div class="flex-grow">
-          <p class="text-lg leading-relaxed text-gray-300 mb-4">
-            Hello! I'm Angkon Kar, a passionate web developer who loves creating user-friendly digital experiences. My coding journey began with a fascination for website structures, and it quickly became a profession where I can combine creativity with problem-solving skills.
-          </p>
-          <p class="text-lg leading-relaxed text-gray-300">
-            I specialize in front-end development, working with technologies like HTML, CSS, JavaScript, and React. I enjoy turning complex ideas into simple, beautiful, and intuitive designs. When I'm not coding, you can find me exploring new tech trends, contributing to open-source projects, or enhancing my skills through online courses.
-          </p>
-        </div>
-      </div>
-    </section>
+                    <div class="mt-6 flex flex-wrap gap-4 justify-center md:justify-start">
+                        <a href="mailto:angkon310@gmail.com" class="flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-all">
+                            <i data-lucide="mail" class="w-5 h-5 mr-2 text-blue-400"></i> Gmail
+                        </a>
+                        <a href="https://linkedin.com/in/Angkon-Kar" class="flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg transition-all">
+                            <i data-lucide="linkedin" class="w-5 h-5 mr-2 text-blue-400"></i> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <!-- Skills -->
-    <section id="skills" class="max-w-4xl mx-auto mb-16">
-      <h2 class="text-4xl font-bold text-center text-blue-400 mb-10 flex items-center justify-center">
-        <i data-lucide="rocket" class="w-9 h-9 mr-3"></i> My Skills
-      </h2>
-      <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">HTML5</p></div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">CSS3</p></div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">JavaScript</p></div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">React</p></div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">Tailwind CSS</p></div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">Node.js</p></div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">Git</p></div>
-          <div class="bg-gray-700 p-4 rounded-lg shadow-md transition-transform transform hover:scale-105"><p class="text-lg font-semibold text-gray-200">UI/UX Design</p></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Developer Profiles -->
-    <section id="dev-profiles" class="py-20 px-6 md:px-12 bg-gray-900 border-t border-gray-800">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-4xl font-bold text-center text-blue-400 mb-10 flex items-center justify-center">
-          <i data-lucide="terminal" class="w-9 h-9 mr-3"></i> My Developer Profiles
-        </h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-          
-          <!-- GitHub -->
-          <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
-            <div class="flex items-center mb-4">
-              <i data-lucide="github" class="w-10 h-10 mr-4 text-white"></i>
-              <div>
-                <h3 class="text-2xl font-semibold text-white">GitHub</h3>
-                <a href="https://github.com/Angkon-Kar" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">
-                  @Angkon-Kar
+        <section id="profiles" class="mb-20">
+            <h2 class="text-4xl font-bold text-center text-blue-400 mb-12 flex items-center justify-center">
+                <i data-lucide="share-2" class="w-9 h-9 mr-3"></i> Presence & Profiles
+            </h2>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <a href="https://linkedin.com/in/Angkon-Kar" target="_blank" class="glow-card bg-gray-800 p-6 rounded-xl border border-gray-700 text-center hover:scale-105 transition-transform">
+                    <i data-lucide="linkedin" class="w-10 h-10 mx-auto mb-4 text-[#0A66C2]"></i>
+                    <h4 class="font-bold text-white">LinkedIn</h4>
+                    <p class="text-xs text-gray-500 mt-1">Professional Network</p>
                 </a>
-              </div>
-            </div>
-            <p class="text-gray-400 mb-4">Explore my code, projects, and contributions. This profile is a hub for all my development work.</p>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://github.com/Angkon-Kar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-md">
-                Show Main Profile <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-              </a>
-              <a href="https://gitglance.vercel.app/angkon-kar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-md">
-                Show Visualizer Profile <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- Codeforces -->
-          <div class="bg-gray-800 p-6 rounded-xl shadow-lg border border-gray-700 transform hover:-translate-y-2 transition-transform duration-300">
-            <div class="flex items-center mb-4">
-              <i data-lucide="code" class="w-10 h-10 mr-4 text-white"></i>
-              <div>
-                <h3 class="text-2xl font-semibold text-white">Codeforces</h3>
-                <a href="https://codeforces.com/profile/angkon_kar" target="_blank" rel="noopener noreferrer" class="text-blue-400 hover:underline">
-                  @angkon_kar
+                <a href="https://github.com/Angkon-Kar" target="_blank" class="glow-card bg-gray-800 p-6 rounded-xl border border-gray-700 text-center hover:scale-105 transition-transform">
+                    <i data-lucide="github" class="w-10 h-10 mx-auto mb-4 text-white wobble-icon"></i>
+                    <h4 class="font-bold text-white">GitHub</h4>
+                    <p class="text-xs text-gray-500 mt-1">Code Repositories</p>
                 </a>
-              </div>
+                <a href="https://codeforces.com/profile/angkon_kar" target="_blank" class="glow-card bg-gray-800 p-6 rounded-xl border border-gray-700 text-center transition-all duration-300">
+                    <i data-lucide="code-2" class="w-10 h-10 mx-auto mb-4 text-[#FFD700] wobble-icon"></i>
+                    <h4 class="font-bold text-white">Codeforces</h4>
+                    <p class="text-xs text-gray-500 mt-1">Problem Solving</p>
+                    <div class="mt-2 text-sm font-bold text-green-400 flex items-center justify-center">
+                        <span class="rating-pulse"></span> Max Rating: 1163
+                    </div>
+                </a>
+                <a href="mailto:angkon310@gmail.com" class="glow-card bg-gray-800 p-6 rounded-xl border border-gray-700 text-center hover:scale-105 transition-transform">
+                    <i data-lucide="mail" class="w-10 h-10 mx-auto mb-4 text-red-400"></i>
+                    <h4 class="font-bold text-white">Email</h4>
+                    <p class="text-xs text-gray-500 mt-1">Direct Contact</p>
+                </a>
             </div>
-            <p class="text-gray-400 mb-4">Check out my competitive programming performance, contest ratings, and problem-solving skills.</p>
-            <div class="flex space-x-4 mt-auto">
-              <a href="https://codeforces.com/profile/angkon_kar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-md">
-                Show Main Profile <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-              </a>
-              <a href="https://cf-viz.vercel.app/user/?handle=angkon_kar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white font-medium rounded-lg transition-colors duration-300 transform hover:scale-105 shadow-md">
-                Show Visualizer Profile <i data-lucide="external-link" class="w-4 h-4 ml-2"></i>
-              </a>
+        </section>
+
+<section id="skills" class="mb-20">
+    <h2 class="text-4xl font-bold text-center text-blue-400 mb-12 flex items-center justify-center">
+        <i data-lucide="rocket" class="w-9 h-9 mr-3"></i> Core Expertise
+    </h2>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glow-card bg-gray-800 p-6 rounded-2xl border border-gray-700">
+            <h4 class="text-xl font-bold text-white mb-6 flex items-center">
+                <i data-lucide="layout" class="w-6 h-6 mr-2 text-blue-400"></i> Frontend
+            </h4>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" class="w-5 h-5 mr-2" /> HTML5
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" class="w-5 h-5 mr-2" /> CSS3
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" class="w-5 h-5 mr-2" /> JavaScript
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" class="w-5 h-5 mr-2" /> React
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg" class="w-5 h-5 mr-2" /> Tailwind
+                </span>
             </div>
-          </div>
         </div>
-      </div>
-    </section>
+
+        <div class="glow-card bg-gray-800 p-6 rounded-2xl border border-gray-700">
+            <h4 class="text-xl font-bold text-white mb-6 flex items-center">
+                <i data-lucide="database" class="w-6 h-6 mr-2 text-green-400"></i> Backend & DB
+            </h4>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" class="w-5 h-5 mr-2" /> Node.js
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg" class="w-5 h-5 mr-2 invert" /> Express
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" class="w-5 h-5 mr-2" /> Firebase
+                </span>
+            </div>
+        </div>
+
+        <div class="glow-card bg-gray-800 p-6 rounded-2xl border border-gray-700">
+            <h4 class="text-xl font-bold text-white mb-6 flex items-center">
+                <i data-lucide="wrench" class="w-6 h-6 mr-2 text-purple-400"></i> Others
+            </h4>
+            <div class="flex flex-wrap gap-3">
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" class="w-5 h-5 mr-2" /> Git
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="w-5 h-5 mr-2 invert" /> GitHub
+                </span>
+                <span class="bg-gray-700/50 px-3 py-2 rounded-lg border border-gray-600 flex items-center text-sm">
+                    <i data-lucide="pen-tool" class="w-5 h-5 mr-2 text-pink-400"></i> UI/UX Basics
+                </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="education" class="mb-20">
+    <h2 class="text-4xl font-bold text-center text-blue-400 mb-12 flex items-center justify-center">
+        <i data-lucide="graduation-cap" class="w-9 h-9 mr-3"></i> Education
+    </h2>
+    
+    <div class="space-y-8">
+        <div class="glow-card bg-gray-800 p-6 rounded-2xl border-l-4 border-blue-500 flex flex-col md:flex-row items-center gap-6 shadow-xl">
+            <div class="flex-shrink-0 bg-white p-2 rounded-xl">
+                <img src="https://via.placeholder.com/60" alt="SIMT Logo" class="w-16 h-16 object-contain">
+            </div>
+            <div class="flex-grow text-center md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h4 class="text-xl font-bold text-white uppercase">B.Sc. in Computer Science & Engineering</h4>
+                        <p class="text-blue-400 font-medium">SIMT Engineering College</p>
+                        <p class="text-gray-500 text-sm">Affiliated by University of Dhaka</p>
+                    </div>
+                    <span class="mt-2 md:mt-0 bg-blue-900/40 text-blue-400 px-4 py-1 rounded-full text-xs font-bold border border-blue-800">2024 - Present</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="glow-card bg-gray-800 p-6 rounded-2xl border-l-4 border-purple-500 flex flex-col md:flex-row items-center gap-6 shadow-xl">
+            <div class="flex-shrink-0 bg-white p-2 rounded-xl">
+                <img src="https://via.placeholder.com/60" alt="College Logo" class="w-16 h-16 object-contain">
+            </div>
+            <div class="flex-grow text-center md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h4 class="text-xl font-bold text-white uppercase">Higher Secondary Certificate (HSC)</h4>
+                        <p class="text-purple-400 font-medium">Govt. Mohammadpur Model School and College</p>
+                        <p class="text-gray-500 text-sm italic">Science | GPA: 4.48 / 5.00</p>
+                    </div>
+                    <span class="mt-2 md:mt-0 bg-purple-900/40 text-purple-400 px-4 py-1 rounded-full text-xs font-bold border border-purple-800">2022 - 2023</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="glow-card bg-gray-800 p-6 rounded-2xl border-l-4 border-pink-500 flex flex-col md:flex-row items-center gap-6 shadow-xl">
+            <div class="flex-shrink-0 bg-white p-2 rounded-xl">
+                <img src="https://via.placeholder.com/60" alt="School Logo" class="w-16 h-16 object-contain">
+            </div>
+            <div class="flex-grow text-center md:text-left">
+                <div class="flex flex-col md:flex-row justify-between items-start md:items-center">
+                    <div>
+                        <h4 class="text-xl font-bold text-white uppercase">Secondary School Certificate (SSC)</h4>
+                        <p class="text-pink-400 font-medium">Armanitola Govt. High School, Dhaka</p>
+                        <p class="text-gray-500 text-sm italic">Science | GPA: 5.00 / 5.00</p>
+                    </div>
+                    <span class="mt-2 md:mt-0 bg-pink-900/40 text-pink-400 px-4 py-1 rounded-full text-xs font-bold border border-pink-800">Passed 2021</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
 
-    <section id="education" class="max-w-4xl mx-auto mb-16">
-        <h2 class="text-4xl font-bold text-center text-blue-400 mb-10 flex items-center justify-center">
-            <i data-lucide="graduation-cap" class="w-9 h-9 mr-3"></i> Education
-        </h2>
-        <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
-            <div class="space-y-6">
-                <div>
-                    <p class="text-lg font-medium text-white">B.Sc. in Computer Science & Engineering</p>
-                    <p class="text-gray-400">SIMT Engineering College, affiliated by University of Dhaka</p>
-                    <p class="text-gray-500 text-sm">October 2024 - Present</p>
-                </div>
-                <hr class="border-gray-700">
-                <div>
-                    <p class="text-lg font-medium text-white">Higher Secondary Certificates (HSC), Science</p>
-                    <p class="text-gray-400">Govt. Mohammadpur Model School and College</p>
-                    <p class="text-gray-500 text-sm">January 2022 - December 2023</p>
-                    <p class="text-gray-500 text-sm">Grade: 4.48 out of 5.00</p>
-                </div>
-                <hr class="border-gray-700">
-                <div>
-                    <p class="text-lg font-medium text-white">Secondary School Certificate (SSC), Science</p>
-                    <p class="text-gray-400">Armanitola Govt. High School, Dhaka</p>
-                    <p class="text-gray-500 text-sm">SSC 2021</p>
-                    <p class="text-gray-500 text-sm">Grade: 5.00 out of 5.00</p>
-                </div>
-            </div>
-        </div>
-    </section>
+    </main>
 
-    <!-- Experience
-    <section id="professional-experience" class="max-w-4xl mx-auto mb-16">
-      <h2 class="text-4xl font-bold text-center text-blue-400 mb-10 flex items-center justify-center">
-        <i data-lucide="briefcase" class="w-9 h-9 mr-3"></i> Professional Experience
-      </h2>
-      <div class="bg-gray-800 p-8 rounded-xl shadow-lg border border-gray-700">
-        <div class="space-y-4">
-          <div>
-            <p class="text-lg font-medium text-white">Jr. Web Developer Intern</p>
-            <p class="text-gray-400">Acme Solutions, Dhaka, Bangladesh</p>
-            <p class="text-gray-500 text-sm">June 2024 - August 2024</p>
-            <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
-              <li>Developed and maintained client websites using React.js and Node.js.</li>
-              <li>Collaborated with a senior developer to implement new features and bug fixes.</li>
-              <li>Assisted in the design and development of responsive user interfaces.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section> -->
+    <footer class="bg-gray-800 py-10 text-center text-gray-500 border-t border-gray-700">
+        <p>&copy; <span id="current-year"></span> Angkon Kar | Virtual CV Portfolio</p>
+    </footer>
 
     <script src="script.js"></script>
-
+    <script>lucide.createIcons();</script>
 </body>
 </html>

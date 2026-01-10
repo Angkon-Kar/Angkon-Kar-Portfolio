@@ -1,34 +1,110 @@
 /* Custom Font */
 body {
     font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
 }
 
-/* Tailwind CSS Animation Keyframes for Blob effect */
-@keyframes blob {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0, 0) scale(1);
-  }
+html {
+    scroll-behavior: smooth;
 }
+
+/* Background Blob Animation */
+@keyframes blob {
+  0% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0, 0) scale(1); }
+}
+
 .animate-blob {
   animation: blob 7s infinite cubic-bezier(0.68, -0.55, 0.27, 1.55);
 }
-.animation-delay-2000 {
-  animation-delay: 2s;
-}
-.animation-delay-4000 {
-  animation-delay: 4s;
+
+.animation-delay-2000 { animation-delay: 2s; }
+.animation-delay-4000 { animation-delay: 4s; }
+
+/* Glow Card Effect */
+/* style.css */
+.glow-card {
+    background: linear-gradient(165deg, #1f2937 0%, #111827 100%); /* হালকা গ্রেডিয়েন্ট */
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
 }
 
-/* Smooth scroll for anchor links */
-html {
-    scroll-behavior: smooth;
+/* Glow will move according to mouse position */
+.glow-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        600px circle at var(--mouse-x) var(--mouse-y),
+        rgba(96, 165, 250, 0.15),
+        transparent 40%
+    );
+    z-index: 1;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.glow-card:hover::before {
+    opacity: 1;
+}
+
+/* Ensure content is above the glow effect */
+.glow-card > * {
+    position: relative;
+    z-index: 2;
+}
+
+.glow-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(96, 165, 250, 0.5);
+}
+
+
+/* Codeforces Rating Pulse Effect */
+.rating-pulse {
+    display: inline-block;
+    width: 8px; height: 8px;
+    background-color: #4ade80;
+    border-radius: 50%;
+    margin-right: 8px;
+    box-shadow: 0 0 0 rgba(74, 222, 128, 0.4);
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(74, 222, 128, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
+}
+
+/* For image glowing in certificates section */
+img.glow-card:hover {
+    border-color: #60a5fa !important;
+    filter: brightness(1.1);
+}
+
+.extra-cert {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Wobble Animation */
+@keyframes wobble {
+  0% { transform: rotate(0deg); }
+  25% { transform: rotate(-10deg); }
+  50% { transform: rotate(10deg); }
+  75% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.glow-card:hover .wobble-icon {
+  animation: wobble 0.5s ease-in-out infinite;
 }

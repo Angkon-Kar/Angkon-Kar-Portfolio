@@ -4,18 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Home - Angkon Kar</title>
-  <!-- Tailwind CSS -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <!-- Custom CSS -->
   <link rel="stylesheet" href="style.css">
-  <!-- Favicon -->
   <link rel="icon" type="image/jpg" href="assets/angkonkar.jpg">
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+  
   <style>
-    /* Carousel Scroll Animation */
     .scroll-container {
       display: flex;
       width: max-content;
@@ -28,9 +24,8 @@
   </style>
 </head>
 
-<body class="min-h-screen bg-gray-900 text-gray-200 antialiased">
+<body class="min-h-screen bg-gray-900 text-gray-200 antialiased overflow-x-hidden">
 
-  <!-- Navbar -->
   <header class="bg-gray-800 shadow-lg py-4 px-6 md:px-12 fixed w-full z-50 top-0">
     <nav class="flex flex-col md:flex-row justify-between items-center max-w-7xl mx-auto">
       <a href="index.html" class="text-2xl font-bold text-blue-400 hover:text-blue-300 transition-colors duration-300 mb-2 md:mb-0">
@@ -45,12 +40,9 @@
     </nav>
   </header>
 
-  <!-- Spacer for navbar -->
   <div class="pt-24"></div>
 
-  <!-- Hero Section -->
   <section class="relative flex flex-col items-center justify-center text-center py-32 px-6 overflow-hidden">
-    <!-- Background Blobs -->
     <div class="absolute top-0 -left-32 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
     <div class="absolute top-0 -right-32 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-2000"></div>
     <div class="absolute bottom-0 left-32 w-96 h-96 bg-pink-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob animation-delay-4000"></div>
@@ -58,7 +50,7 @@
     <div class="relative z-10 max-w-3xl">
       <h1 class="text-5xl md:text-6xl font-extrabold text-blue-400 mb-6">Hi, I'm Angkon Kar</h1>
       <p class="text-lg md:text-xl text-gray-300 mb-8">
-        A passionate <span class="text-blue-400">Web Developer</span> creating modern, responsive, and user-friendly experiences.
+        A passionate <span id="typed-text" class="text-blue-400"></span>
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="projects.html" class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-md transition transform hover:scale-105">
@@ -71,53 +63,32 @@
     </div>
   </section>
 
-  <!-- Featured Projects -->
-  <section class="py-16 px-6 md:px-12">
+  <section class="py-16 px-6 md:px-12 bg-gray-900/50 relative z-10">
     <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">Featured Projects</h2>
-    <div class="overflow-hidden">
-      <div class="scroll-container space-x-6">
-        <!-- Project Card -->
-        <div class="bg-gray-800 w-72 p-6 rounded-xl shadow-lg border border-gray-700">
-          <h3 class="text-xl font-semibold text-white mb-2">Portfolio Website</h3>
-          <p class="text-gray-400">A modern portfolio site built with Tailwind CSS and JavaScript.</p>
-        </div>
-        <div class="bg-gray-800 w-72 p-6 rounded-xl shadow-lg border border-gray-700">
-          <h3 class="text-xl font-semibold text-white mb-2">E-Commerce Store</h3>
-          <p class="text-gray-400">An online shopping platform with cart and checkout features.</p>
-        </div>
-        <div class="bg-gray-800 w-72 p-6 rounded-xl shadow-lg border border-gray-700">
-          <h3 class="text-xl font-semibold text-white mb-2">Blog Platform</h3>
-          <p class="text-gray-400">A simple CMS for writing and publishing blog posts.</p>
-        </div>
-      </div>
-    </div>
+    <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto"></div>
   </section>
 
-  <!-- Certificates Carousel -->
-  <section class="py-16 px-6 md:px-12">
+  <section class="py-16 px-6 md:px-12 relative z-10">
     <h2 class="text-4xl font-bold text-center text-blue-400 mb-10">My Certificates</h2>
     <div class="overflow-hidden">
       <div class="scroll-container space-x-6">
-        <img src="assets/AWSCloudSecurityEssentialsforExecutives.png" alt="Certificate 1" class="h-40 rounded-lg shadow-lg border border-gray-700">
-        <img src="assets/TheCompleteChatGPTGuideFromZerotoHero2023.png" alt="Certificate 2" class="h-40 rounded-lg shadow-lg border border-gray-700">
-        <img src="assets/LearnCSSForBeginners.png" alt="Certificate 3" class="h-40 rounded-lg shadow-lg border border-gray-700">
-        <img src="assets/IntrotoChatGPT.png" alt="Certificate 4" class="h-40 rounded-lg shadow-lg border border-gray-700">
-        <img src="assets/CodingBasicsGentleIntrotoComputerProgramming.png" alt="Certificate 5" class="h-40 rounded-lg shadow-lg border border-gray-700">
-        <img src="assets/HTMLandCSSforBeginnersFromBasictoAdvance.png" alt="Certificate 6" class="h-40 rounded-lg shadow-lg border border-gray-700">
+        <img src="assets/AWSCloudSecurityEssentialsforExecutives.png" alt="Certificate 1" class="h-40 rounded-lg shadow-lg border border-gray-700 glow-card">
+        <img src="assets/TheCompleteChatGPTGuideFromZerotoHero2023.png" alt="Certificate 2" class="h-40 rounded-lg shadow-lg border border-gray-700 glow-card">
+        <img src="assets/LearnCSSForBeginners.png" alt="Certificate 3" class="h-40 rounded-lg shadow-lg border border-gray-700 glow-card">
+        <img src="assets/IntrotoChatGPT.png" alt="Certificate 4" class="h-40 rounded-lg shadow-lg border border-gray-700 glow-card">
+        <img src="assets/CodingBasicsGentleIntrotoComputerProgramming.png" alt="Certificate 5" class="h-40 rounded-lg shadow-lg border border-gray-700 glow-card">
+        <img src="assets/HTMLandCSSforBeginnersFromBasictoAdvance.png" alt="Certificate 6" class="h-40 rounded-lg shadow-lg border border-gray-700 glow-card">
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-gray-800 text-center py-6 mt-20 border-t border-gray-700 relative z-10">
+  <footer class="bg-gray-800 text-center py-8 mt-20 border-t border-gray-700 relative z-10">
     <p class="text-gray-400 text-sm">
-      Made with <span class="text-red-500">&hearts;</span> by Angkon Kar
+      &copy; <span id="current-year"></span> Made with <span class="text-red-500">&hearts;</span> by Angkon Kar
     </p>
   </footer>
 
-  <!-- Init Lucide icons -->
-  <script>
-    lucide.createIcons();
-  </script>
+  <script src="script.js"></script>
+  <script src="certificates.js"></script>
 </body>
 </html>
