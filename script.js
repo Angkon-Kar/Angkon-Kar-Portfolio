@@ -22,12 +22,24 @@ const projects = [
     {
         title: "Task Manager Web App 🚀",
         description: "A simple Task Management application built using HTML, CSS, and JavaScript with localStorage for data persistence.",
-        longDescription: "এটি একটি পূর্ণাঙ্গ টাস্ক ম্যানেজমেন্ট অ্যাপ্লিকেশন। এতে ইউজারের ডাটা Browser LocalStorage-এ সেভ থাকে, ফলে পেজ রিফ্রেশ করলেও ডাটা মুছে যায় না। এর প্রধান ফিচারগুলো হলো: নতুন টাস্ক যোগ করা, এডিট করা, ডিলিট করা এবং প্রpriority অনুযায়ী ফিল্টার করা।",
-        image: "assets/task-manager-preview.png", // আপনার ইমেজের নাম এখানে দিন
+        longDescription: `📝 Advanced Task Manager
+
+A modern, feature-rich Task Manager / To-Do List Web App built with HTML, CSS, and Vanilla JavaScript. This project goes beyond a simple to-do list, providing categories, priorities, recurrence, bulk actions, import/export, and progress tracking — all wrapped in a responsive and animated UI.
+
+✨ Features:
+🔧 Task Management: Add, Edit, Delete (with fade-out animation), and Mark complete.
+🏷️ Categories & Priorities: Work, Personal, Study with color-coded badges (High 🔴, Medium 🟠, Low 🟢).
+📅 Smart Due Dates: Overdue highlights and sorting.
+📊 Productivity Tools: Progress Tracker and Bulk Actions.
+🔁 Recurring Tasks: Supports daily, weekly, and monthly recurrence.
+💾 Data Handling: LocalStorage persistence and JSON Import/Export.
+🖥️ UI & UX: Modern responsive layout with smooth animations.`,
+        image: "assets/project-photo/task-management-photo.png",
         liveDemo: "https://aktaskmanage.netlify.app/",
         github: "https://github.com/Angkon-Kar/Task_Manager",
-        technologies: ["HTML", "CSS", "JavaScript"]
+        technologies: ["HTML5", "CSS3", "Vanilla JavaScript(ES6)"]
     },
+    
     {
         title: "🔐 Register-Login Page",
         description: "A simple, responsive Register and Login Page built using HTML, CSS, and JavaScript.",

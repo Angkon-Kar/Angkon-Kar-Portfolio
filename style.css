@@ -108,3 +108,9 @@ img.glow-card:hover {
 .glow-card:hover .wobble-icon {
   animation: wobble 0.5s ease-in-out infinite;
 }
+
+#modal-description {
+    white-space: pre-line; /* এটি নতুন লাইনগুলোকে ঠিকমতো দেখাবে */
+    line-height: 1.6;      /* পড়ার সুবিধার জন্য লাইনের মাঝে একটু গ্যাপ দিবে */
+    text-align: left;
+}
