@@ -17,11 +17,13 @@ if (document.getElementById('typed-text')) {
     });
 }
 
-// Data for the projects
+// Data for the projects (Updated with longDescription and images)
 const projects = [
     {
         title: "Task Manager Web App 🚀",
         description: "A simple Task Management application built using HTML, CSS, and JavaScript with localStorage for data persistence.",
+        longDescription: "এটি একটি পূর্ণাঙ্গ টাস্ক ম্যানেজমেন্ট অ্যাপ্লিকেশন। এতে ইউজারের ডাটা Browser LocalStorage-এ সেভ থাকে, ফলে পেজ রিফ্রেশ করলেও ডাটা মুছে যায় না। এর প্রধান ফিচারগুলো হলো: নতুন টাস্ক যোগ করা, এডিট করা, ডিলিট করা এবং প্রpriority অনুযায়ী ফিল্টার করা।",
+        image: "assets/task-manager-preview.png", // আপনার ইমেজের নাম এখানে দিন
         liveDemo: "https://aktaskmanage.netlify.app/",
         github: "https://github.com/Angkon-Kar/Task_Manager",
         technologies: ["HTML", "CSS", "JavaScript"]
@@ -29,6 +31,8 @@ const projects = [
     {
         title: "🔐 Register-Login Page",
         description: "A simple, responsive Register and Login Page built using HTML, CSS, and JavaScript.",
+        longDescription: "এই প্রোজেক্টটি মূলত ফ্রন্টএন্ড ফর্ম ভ্যালিডেশন এবং রেসপনসিভ ইউজার ইন্টারফেস ডিজাইনের ওপর ভিত্তি করে তৈরি। এতে পাসওয়ার্ড শো/হাইড ফিচার এবং ক্লায়েন্ট-সাইড ডাটা ভ্যালিডেশন চেক করা হয়েছে।",
+        image: "assets/login-preview.png",
         liveDemo: "https://akregisterloginpage1.netlify.app/",
         github: "https://github.com/Angkon-Kar/Register-Login-Page",
         technologies: ["HTML", "CSS", "JavaScript"]
@@ -36,6 +40,8 @@ const projects = [
     {
         title: "Tic-Tac-Toe: Multi-Mode Game",
         description: "A classic Tic-Tac-Toe game built with HTML, CSS, and JavaScript, featuring three exciting game modes.",
+        longDescription: "ক্লাসিক টিক-ট্যাক-টো গেমের একটি আধুনিক সংস্করণ। এতে ৩টি মোড রয়েছে: ১. লোকাল মাল্টিপ্লেয়ার, ২. অনলাইন মাল্টিপ্লেয়ার (Firebase integration), এবং ৩. প্লেয়ার বনাম এআই (AI)।",
+        image: "assets/tictactoe-preview.png",
         liveDemo: "https://aktictactoegame.netlify.app/",
         github: "https://github.com/Angkon-Kar/Tic-Tac-Toe",
         technologies: ["HTML", "CSS", "JavaScript", "Firebase"]
@@ -43,24 +49,81 @@ const projects = [
     {
         title: "Dot Connect Game",
         description: "Modern version of the classic childhood game, showcasing a full-stack, real-time multiplayer experience.",
+        longDescription: "এটি একটি মাল্টিপ্লেয়ার গেম যা Socket.IO এবং Node.js ব্যবহার করে রিয়েল-টাইমে কাজ করে। ইউজাররা রুম কোড ব্যবহার করে বন্ধুদের সাথে অনলাইনে সরাসরি খেলতে পারেন।",
+        image: "assets/dotconnect-preview.png",
         liveDemo: "https://dotconnectgame.netlify.app/",
         github: "https://github.com/Angkon-Kar/Dot-Connect-Game",
-        technologies: ["HTML", "CSS", "JavaScript", "Node.js"]
+        technologies: ["HTML", "CSS", "JavaScript", "Node.js", "Socket.IO"]
     }
 ];
 
-// Function to render projects
+// --- Modal Functionality ---
+
+function openProjectDetails(index) {
+    const project = projects[index];
+    const modal = document.getElementById('project-modal');
+    
+    // Title and Descriptions
+    document.getElementById('modal-title').textContent = project.title;
+    document.getElementById('modal-description').textContent = project.longDescription || project.description;
+    
+    // Image Handling
+    const imgElement = document.getElementById('modal-image');
+    if (project.image) {
+        imgElement.src = project.image;
+        imgElement.style.display = 'block';
+    } else {
+        imgElement.style.display = 'none';
+    }
+
+    // Technology Tags
+    const techContainer = document.getElementById('modal-tech');
+    techContainer.innerHTML = project.technologies.map(tech => 
+        `<span class="bg-blue-900/40 text-blue-300 px-3 py-1 rounded-full text-sm border border-blue-800">${tech}</span>`
+    ).join('');
+
+    // Links
+    document.getElementById('modal-live').href = project.liveDemo;
+    document.getElementById('modal-github').href = project.github;
+
+    // Show Modal
+    modal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden'; // Stop scrolling
+    lucide.createIcons();
+}
+
+function closeModal() {
+    const modal = document.getElementById('project-modal');
+    modal.classList.add('hidden');
+    document.body.style.overflow = 'auto'; // Enable scrolling
+}
+
+// Close modal when clicking outside the content
+window.onclick = function(event) {
+    const modal = document.getElementById('project-modal');
+    if (event.target == modal) {
+        closeModal();
+    }
+}
+
+// --- Render Projects Function ---
+
 function renderProjects() {
     const container = document.getElementById('projects-container');
     if (!container) return;
 
-    container.innerHTML = projects.map(p => `
+    container.innerHTML = projects.map((p, index) => `
         <div class="glow-card bg-gray-800 p-6 rounded-xl border border-gray-700 flex flex-col h-full shadow-lg transition-all duration-300">
             <h3 class="text-2xl font-bold text-white mb-3">${p.title}</h3>
             <p class="text-gray-400 mb-4 flex-grow">${p.description}</p>
-            <div class="flex space-x-4 mt-auto">
-                <a href="${p.liveDemo}" target="_blank" class="px-4 py-2 bg-blue-600 hover:bg-blue-700 rounded-lg text-white font-medium transition-transform hover:scale-105">Demo</a>
-                <a href="${p.github}" target="_blank" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white font-medium transition-transform hover:scale-105">Code</a>
+            <div class="flex flex-col space-y-3 mt-auto">
+                <button onclick="openProjectDetails(${index})" class="w-full py-2 bg-blue-600/20 text-blue-400 border border-blue-600/50 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-all">
+                    View Details
+                </button>
+                <div class="flex space-x-2">
+                    <a href="${p.liveDemo}" target="_blank" class="flex-1 text-center py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white text-sm transition-colors">Demo</a>
+                    <a href="${p.github}" target="_blank" class="flex-1 text-center py-2 bg-gray-700 hover:bg-gray-600 rounded-lg text-white text-sm transition-colors">Code</a>
+                </div>
             </div>
         </div>
     `).join('');
@@ -68,7 +131,10 @@ function renderProjects() {
     lucide.createIcons();
 }
 
-document.addEventListener('DOMContentLoaded', renderProjects);
+// Initial calls
+document.addEventListener('DOMContentLoaded', () => {
+    renderProjects();
+});
 
 
 // Bio "See More" Functionality
