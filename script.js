@@ -10,7 +10,7 @@ if (yearEl) {
 // Typing Animation Logic
 if (document.getElementById('typed-text')) {
     new Typed('#typed-text', {
-        strings: ['Web Developer', 'Problem Solver', 'CSE Student', 'UI/UX Enthusiast'],
+        strings: ['Competitive Programmer', 'Web Developer', 'Software Engineer', 'Problem Solver', 'AI Enthusiast'],
         typeSpeed: 60,
         backSpeed: 40,
         loop: true
