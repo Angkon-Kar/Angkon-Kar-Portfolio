@@ -21,14 +21,16 @@ html {
 }
 
 .animation-delay-2000 { animation-delay: 2s; }
-.animation-delay-4000 { animation-delay: 4s; }
 
 /* Glow Card Effect */
-/* style.css */
+/* NOTE: Removed hardcoded dark background so Tailwind handles light/dark mode */
 .glow-card {
-    background: linear-gradient(165deg, #1f2937 0%, #111827 100%); /* হালকা গ্রেডিয়েন্ট */
     position: relative;
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.dark .glow-card {
     box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.7);
 }
 
@@ -46,6 +48,7 @@ html {
     pointer-events: none;
     opacity: 0;
     transition: opacity 0.5s;
+    border-radius: inherit;
 }
 
 .glow-card:hover::before {
@@ -62,7 +65,6 @@ html {
     transform: translateY(-5px);
     border-color: rgba(96, 165, 250, 0.5);
 }
-
 
 /* Codeforces Rating Pulse Effect */
 .rating-pulse {
@@ -81,7 +83,6 @@ html {
     100% { box-shadow: 0 0 0 0 rgba(74, 222, 128, 0); }
 }
 
-/* For image glowing in certificates section */
 img.glow-card:hover {
     border-color: #60a5fa !important;
     filter: brightness(1.1);
@@ -110,7 +111,7 @@ img.glow-card:hover {
 }
 
 #modal-description {
-    white-space: pre-line; /* এটি নতুন লাইনগুলোকে ঠিকমতো দেখাবে */
-    line-height: 1.6;      /* পড়ার সুবিধার জন্য লাইনের মাঝে একটু গ্যাপ দিবে */
+    white-space: pre-line;
+    line-height: 1.6;
     text-align: left;
 }
