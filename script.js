@@ -217,7 +217,7 @@ if (themeToggleBtn) {
 // EmailJS Contact Form Logic
 // ==========================================
 if (typeof emailjs !== 'undefined') {
-    emailjs.init("YOUR_PUBLIC_KEY"); // এখানে তোমার পাবলিক কি বসাবে
+    emailjs.init("tTbojChhKKB2EGpal"); // Public key.
 }
 
 const contactForm = document.getElementById('contact-form');
