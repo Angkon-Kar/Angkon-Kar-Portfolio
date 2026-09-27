@@ -115,3 +115,54 @@ img.glow-card:hover {
     line-height: 1.6;
     text-align: left;
 }
+
+/* ==========================================
+   Navbar Dropdown (hover on desktop, tap on mobile)
+   ========================================== */
+.nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-top: 0.75rem;
+    width: 15rem;
+    z-index: 50;
+    transform: translate(-50%, 8px);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.18s ease, transform 0.18s ease, visibility 0.18s;
+}
+
+.nav-dropdown.nav-dropdown-open {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+}
+
+.nav-dropdown-btn .lucide-chevron-down {
+    transition: transform 0.18s ease;
+}
+
+.nav-dropdown-btn.nav-dropdown-btn-open .lucide-chevron-down {
+    transform: rotate(180deg);
+}
+
+/* ==========================================
+   Sticky Footer
+   Keeps the footer pinned to the bottom on pages with little content,
+   instead of it floating up in the middle of the viewport.
+   ========================================== */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-grow {
+    flex: 1 0 auto;
+}
+
+body > footer {
+    flex-shrink: 0;
+}
