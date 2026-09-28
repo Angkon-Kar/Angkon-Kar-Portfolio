@@ -84,6 +84,31 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
+// --- Render Extensions (extensions.html) ---
+function renderExtensions() {
+    const container = document.getElementById('extensions-container');
+    if (!container || typeof extensions === 'undefined') return;
+
+    container.innerHTML = extensions.map((ext) => `
+        <div class="glow-card bg-white dark:bg-gray-800 p-6 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col h-full shadow-lg transition-all duration-300">
+            <img src="${ext.image}" alt="${ext.title}" class="w-full h-40 object-cover rounded-lg mb-4 border border-gray-200 dark:border-gray-700">
+            <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">${ext.title}</h3>
+            <p class="text-gray-600 dark:text-gray-400 mb-4 flex-grow text-sm">${ext.shortDescription}</p>
+            <a href="extension-detail.html?id=${ext.id}" class="w-full py-2 bg-blue-100 dark:bg-blue-600/20 text-blue-600 dark:text-blue-400 border border-blue-300 dark:border-blue-600/50 rounded-lg font-bold hover:bg-blue-600 hover:text-white transition-all text-center">
+                View Details
+            </a>
+        </div>
+    `).join('');
+
+    lucide.createIcons();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof extensions !== 'undefined') {
+        renderExtensions();
+    }
+});
+
 // Bio "See More" Functionality
 const seeMoreBtn = document.getElementById('see-more-btn');
 const bioMore = document.getElementById('bio-more');
@@ -100,6 +125,57 @@ if (seeMoreBtn && bioMore) {
     });
 }
 
+// ==========================================
+// Navbar Dropdown Logic (About / Projects)
+// Desktop: opens smoothly on hover (with a short close-delay so
+// moving the mouse slightly outside doesn't slam it shut).
+// Mobile/touch: opens on tap (hover doesn't exist there).
+// ==========================================
+function closeAllNavDropdowns() {
+    document.querySelectorAll('.nav-dropdown').forEach(d => d.classList.remove('nav-dropdown-open'));
+    document.querySelectorAll('.nav-dropdown-btn').forEach(b => b.classList.remove('nav-dropdown-btn-open'));
+}
+
+function openNavDropdown(btn, dd) {
+    closeAllNavDropdowns();
+    dd.classList.add('nav-dropdown-open');
+    btn.classList.add('nav-dropdown-btn-open');
+}
+
+document.querySelectorAll('.nav-dropdown-btn').forEach((btn) => {
+    const dd = document.getElementById(btn.dataset.dropdown);
+    const li = btn.closest('li');
+    let closeTimer = null;
+
+    // Tap/click toggle (works everywhere, primary interaction on mobile)
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpen = dd.classList.contains('nav-dropdown-open');
+        if (isOpen) {
+            closeAllNavDropdowns();
+        } else {
+            openNavDropdown(btn, dd);
+        }
+    });
+
+    // Hover open/close (desktop only — touch devices don't fire these)
+    if (li) {
+        li.addEventListener('mouseenter', () => {
+            clearTimeout(closeTimer);
+            openNavDropdown(btn, dd);
+        });
+        li.addEventListener('mouseleave', () => {
+            closeTimer = setTimeout(() => {
+                dd.classList.remove('nav-dropdown-open');
+                btn.classList.remove('nav-dropdown-btn-open');
+            }, 200);
+        });
+    }
+});
+
+document.addEventListener('click', closeAllNavDropdowns);
+
+// ==========================================
 // Glow Card Mousemove Effect
 document.addEventListener('mousemove', (e) => {
     const cards = document.querySelectorAll('.glow-card');
