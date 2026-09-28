@@ -51,7 +51,7 @@
           <button type="button" data-dropdown="about-dropdown" class="nav-dropdown-btn text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium flex items-center gap-1">
             About <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
           </button>
-          <div id="about-dropdown" class="nav-dropdown hidden absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl overflow-hidden z-50">
+          <div id="about-dropdown" class="nav-dropdown bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl overflow-hidden">
             <a href="about.html" class="flex items-center gap-3 px-4 py-3 text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"><i data-lucide="user" class="w-4 h-4"></i> Overview</a>
             <a href="experience.html" class="flex items-center gap-3 px-4 py-3 text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"><i data-lucide="briefcase" class="w-4 h-4"></i> Experience & Leadership</a>
             <a href="achievements.html" class="flex items-center gap-3 px-4 py-3 text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"><i data-lucide="trophy" class="w-4 h-4"></i> Achievements</a>
@@ -62,7 +62,7 @@
           <button type="button" data-dropdown="projects-dropdown" class="nav-dropdown-btn text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-300 font-medium flex items-center gap-1">
             Projects <i data-lucide="chevron-down" class="w-4 h-4 transition-transform"></i>
           </button>
-          <div id="projects-dropdown" class="nav-dropdown hidden absolute top-full left-1/2 -translate-x-1/2 mt-3 w-60 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl overflow-hidden z-50">
+          <div id="projects-dropdown" class="nav-dropdown bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl shadow-2xl overflow-hidden">
             <a href="projects.html" class="flex items-center gap-3 px-4 py-3 text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"><i data-lucide="layout-grid" class="w-4 h-4"></i> All Projects</a>
             <a href="extensions.html" class="flex items-center gap-3 px-4 py-3 text-sm transition-colors text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"><i data-lucide="puzzle" class="w-4 h-4"></i> Extensions</a>
           </div>
@@ -79,11 +79,15 @@
     </nav>
   </header>
 
+    <div class="page-grow">
+
   <div class="pt-24"></div>
 
 <section class="relative flex flex-col items-center justify-center text-center py-32 px-6 overflow-hidden">
     <div class="absolute top-0 -left-32 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-blob"></div>
     
+    <div id="mascot-hero-mount" class="relative z-10 mb-4 flex justify-center"></div>
+
     <div class="relative z-10 max-w-3xl p-8 rounded-3xl bg-white/80 dark:bg-gray-800/40 backdrop-blur-xl border border-gray-200 dark:border-gray-700 shadow-2xl glow-card">
       <h1 class="text-5xl md:text-6xl font-extrabold text-blue-600 dark:text-blue-400 mb-6">Hi, I'm Angkon Kar</h1>
       <p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-8">
@@ -116,15 +120,19 @@
     </div>
   </section>
 
-  <footer class="bg-gray-200 dark:bg-gray-800 text-center py-8 mt-20 border-t border-gray-300 dark:border-gray-700 relative z-10 transition-colors">
+  </div>
+
+    <footer class="bg-gray-200 dark:bg-gray-800 text-center py-8 mt-20 border-t border-gray-300 dark:border-gray-700 relative z-10 transition-colors">
     <p class="text-gray-600 dark:text-gray-400 text-sm">
       &copy; <span id="current-year"></span> Made with <span class="text-red-500">&hearts;</span> by Angkon Kar
     </p>
   </footer>
 
   <script src="projects-data.js"></script>
+  <script src="toast.js"></script>
+  <script src="devtools.js"></script>
+  <script src="mascot.js"></script>
   <script src="script.js"></script>
   <script src="certificates.js"></script>
-  <script src="devtools.js"></script>
 </body>
 </html>
